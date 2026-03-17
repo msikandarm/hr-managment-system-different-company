@@ -50,9 +50,9 @@
             <li><a href="{{ route('admin.leave-requests.index') }}"><i class="las la-calendar-check"></i> {{ __('Leave Requests') }}</a></li>
           @endcan
 
-          @can('show-settings')
+          {{-- @can('show-settings')
             <li><a href="{{ route('admin.settings.index') }}"><i class="las la-cog"></i> {{ __('Settings') }}</a></li>
-          @endcan
+          @endcan --}}
 
           @can('admin')
             <li class="hassub">
