@@ -14,12 +14,12 @@
 
     <div class="custom_tabs">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
+        {{-- <li class="nav-item" role="presentation">
           <button @class(['nav-link', 'active' => $tab === 'general']) id="general-tab" data-bs-toggle="tab" data-bs-target="#general-tab-pane" type="button" role="tab" aria-controls="general-tab-pane" aria-selected="true">General</button>
         </li>
         <li class="nav-item" role="presentation">
           <button @class(['nav-link', 'active' => $tab === 'social']) id="social-tab" data-bs-toggle="tab" data-bs-target="#social-tab-pane" type="button" role="tab" aria-controls="social-tab-pane" aria-selected="false">Social Media</button>
-        </li>
+        </li> --}}
         <li class="nav-item" role="presentation">
           <button @class(['nav-link', 'active' => $tab === 'smtp']) id="smtp-tab" data-bs-toggle="tab" data-bs-target="#smtp-tab-pane" type="button" role="tab" aria-controls="smtp-tab-pane" aria-selected="false">SMTP</button>
         </li>
@@ -98,6 +98,17 @@
 
             <x-button-save-changes />
           </x-form>
+
+          <div class="mt-4">
+            <h4>{{ __('Send a Test Email') }}</h4>
+            <x-form action="{{ route('admin.settings.send.test.email') }}" method="post" id="send_email_form">
+              <x-form-group label="{{ __('Send To') }}" inputId="send_to">
+                <x-input name="send_to" type="email" :value="auth()->user()->email" />
+              </x-form-group>
+
+              <button type="submit" class="btn btn-success">{{ __('Send Email') }}</button>
+            </x-form>
+          </div>
         </div>
       </div>
     </div>

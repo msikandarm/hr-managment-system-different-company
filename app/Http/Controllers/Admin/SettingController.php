@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\TestEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SettingController extends Controller
 {
     public function index()
     {
-        $tab = request()->session()->get('tab', 'general');
+        $tab = request()->session()->get('tab', 'smtp');
 
         return view('admin.settings', [
             'title' => __('Settings'),
@@ -66,5 +68,20 @@ class SettingController extends Controller
         return back()
             ->with('success', __('Settings updated successfully.'))
             ->with('tab', 'smtp');
+    }
+
+        public function sendTestEmail(Request $request)
+    {
+        try {
+            Mail::to($request->send_to)->send(new TestEmail);
+
+            return back()
+                ->with('success', 'Test email was sent successfully! Please check your inbox to make sure it is delivered.')
+                ->with('tab', 'smtp');
+        } catch (\Throwable $th) {
+            return back()
+                ->with('error', $th->getMessage())
+                ->with('tab', 'smtp');
+        }
     }
 }

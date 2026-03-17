@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
     Route::put('/settings/social', [SettingController::class, 'updateSocial'])->name('settings.social.update');
     Route::put('/settings/smtp', [SettingController::class, 'updateSmtp'])->name('settings.smtp.update');
+     Route::post('/settings/send-test-email', [SettingController::class, 'sendTestEmail'])->name('settings.send.test.email');
 
     Route::post('/status/update', StatusController::class)->name('status.update');
     Route::post('/upload', UploadController::class)->name('upload');
