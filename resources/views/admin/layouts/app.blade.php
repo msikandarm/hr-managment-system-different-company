@@ -20,7 +20,7 @@
     <div class="black_overlay" style="display:none;"></div>
     <div class="sidepanel">
       <div class="sidepanel_header">
-        <div class="logo"><img src="{{asset('assets/backend/images/ATARA LOGO-WHITE.png')}}" alt="Logo" class="dashboard-logo" style="width:60%"></div>
+        <div class="logo"><img src="{{asset('assets/backend/images/rc-logo.png')}}" alt="Logo" class="dashboard-logo" style="width:60%"></div>
       </div>
       <div class="sidepanel_body">
         <ul class="sidebar_menu">

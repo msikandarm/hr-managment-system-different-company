@@ -19,7 +19,7 @@
         <div class="login_contents">
           <div class="login_form">
             <div class="logo text-center pb-4">
-              <img src="{{asset('assets/backend/images/ATARA LOGO-BLACK 3.png')}}" alt="Logo" class="dashboard-logo" style="width:50%">
+              <img src="{{asset('assets/backend/images/rc-black.png')}}" alt="Logo" class="dashboard-logo" style="width:50%">
             </div>
             @yield('content')
           </div>
