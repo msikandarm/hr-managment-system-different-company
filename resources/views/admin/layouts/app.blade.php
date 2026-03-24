@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="{{ asset('assets/backend/css/style.css') }}?ver={{ config('app.version') }}">
+   @livewireStyles
   @stack('header')
 </head>
 <body>
@@ -155,6 +156,7 @@
       $('.sidebar_menu li a[href="' + window.location.href + '"]').closest('li.hassub').find('a.parentmenu').addClass('active').next('ul').addClass('show').show();
     });
   </script>
+  @livewireScripts
   @stack('footer')
 </body>
 </html>
